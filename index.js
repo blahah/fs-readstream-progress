@@ -7,7 +7,7 @@ function ReadFileProgress (file, opts) {
   if (!(this instanceof ReadFileProgress)) return new ReadFileProgress(file, opts)
   events.EventEmitter.call(this)
 
-  fs = opts.fs || require('fs')
+  fs = opts && opts.fs || require('fs')
 
   var self = this
 
@@ -21,7 +21,7 @@ function ReadFileProgress (file, opts) {
     self.emit('total', self.total)
   })
 
-  self.stream = pumpify(fs.createReadStream(file), through(update))
+  self.stream = pumpify(fs.createReadStream(file, opts), through(update))
 
   self.stream.on('end', () => self.emit('end'))
 
