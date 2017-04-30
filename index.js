@@ -18,6 +18,7 @@ function ReadFileProgress (file, opts) {
   fs.stat(file, function (err, stat) {
     if (err) return error('error reading file: ' + file, err)
     self.total = stat.size
+    self.emit('total', self.total)
   })
 
   self.stream = pumpify(fs.createReadStream(file), through(update))
