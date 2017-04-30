@@ -16,7 +16,7 @@ function ReadFileProgress (file, opts) {
   self.progress = 0
 
   fs.stat(file, function (err, stat) {
-    if (err) return error('error reading file: ' + file, err)
+    if (err) throw err
     self.total = stat.size
     self.emit('total', self.total)
   })
