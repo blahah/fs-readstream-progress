@@ -1,0 +1,22 @@
+{
+  "name": "fs-readstream-progress",
+  "version": "0.0.0",
+  "description": "fs-readstream-progress",
+  "main": "index.js",
+  "dependencies": {
+    "inherits": "^2.0.3",
+    "pumpify": "^1.3.5",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blahah/fs-readstream-progress.git"
+  },
+  "author": "Rik Smith-Unna (@blahah)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/blahah/fs-readstream-progress/issues"
+  },
+  "homepage": "https://github.com/blahah/fs-readstream-progress"
+}
